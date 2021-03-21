@@ -1,33 +1,9 @@
-# Sensor Fusion: Lidar Odometry -- 多传感器融合定位与建图: 基于滤波的融合方法I
 
-深蓝学院, 多传感器融合定位与建图, 第7章Filtering Basic代码框架.
 
----
+## 补全代码，且滤波功能正常
 
-## Overview
+[todo1](https://github.com/bulinx/bulinx-c5-imu-calib/blob/5dd769b4a3365d803fe29fe37229cf29701ef021/src/imu_tk/src/calibration.cpp#L142)
 
-本作业旨在加深对**基于滤波的融合方法**的理解.
-
----
-
-## Getting Started
-
-### 及格要求: 补全代码，且滤波功能正常
-
-启动Docker后, 打开浏览器, 进入Web Workspace. 启动Terminator, 将Shell的工作目录切换如下:
-
-<img src="doc/images/terminator.png" alt="Terminator" width="100%">
-
-在**上侧**的Shell中, 输入如下命令, **编译lidar_localization**. 如遇到错误, 且非首次编译, 请尝试执行**catkin clean**, 清理catkin cache.
-
-```bash
-# build:
-catkin config --install && catkin build lidar_localization
-# set up session:
-source install/setup.bash
-# launch:
-roslaunch lidar_localization kitti_localization.launch
-```
 
 在**下侧**的Shell中, 输入如下命令, **Play KITTI ROS Bag**. 如果机器的配置较低, 可以降低播放速率.
 
