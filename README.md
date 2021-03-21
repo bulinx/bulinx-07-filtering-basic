@@ -2,49 +2,17 @@
 
 ## 补全代码，且滤波功能正常
 
-[todo1](https://github.com/bulinx/bulinx-c5-imu-calib/blob/5dd769b4a3365d803fe29fe37229cf29701ef021/src/imu_tk/src/calibration.cpp#L142)
+[todo1](https://github.com/bulinx/bulinx-07-filtering-basic/blob/791445329033e1d3485cab4d59fe962709a5352d/src/lidar_localization/src/models/kalman_filter/error_state_kalman_filter.cpp#L560)
+[todo2](https://github.com/bulinx/bulinx-07-filtering-basic/blob/791445329033e1d3485cab4d59fe962709a5352d/src/lidar_localization/src/models/kalman_filter/error_state_kalman_filter.cpp#L605)
+[todo3](https://github.com/bulinx/bulinx-07-filtering-basic/blob/791445329033e1d3485cab4d59fe962709a5352d/src/lidar_localization/src/models/kalman_filter/error_state_kalman_filter.cpp#L691)
+[todo4](https://github.com/bulinx/bulinx-07-filtering-basic/blob/791445329033e1d3485cab4d59fe962709a5352d/src/lidar_localization/src/models/kalman_filter/error_state_kalman_filter.cpp#L708)
 
-
-在**下侧**的Shell中, 输入如下命令, **Play KITTI ROS Bag**. 如果机器的配置较低, 可以降低播放速率.
-
-**注意**: 两个数据集均可用于完成课程, 对代码功能的运行没有任何影响, 区别在于第一个有Camera信息
-
-```bash
-# play ROS bag, full KITTI:
-rosbag play kitti_2011_10_03_drive_0027_synced.bag
-# play ROS bag, lidar-only KITTI:
-rosbag play kitti_lidar_only_2011_10_03_drive_0027_synced.bag
-```
-
-成功后, 可以看到如下的RViz Visualization. 其中:
-
-* **黄色**轨迹为**GNSS Localization**, 此处用作**Ground Truth**
-
-* **蓝色**轨迹为**ESKF Fused Estimation**
-
+效果如下：
 <img src="doc/images/demo.png" alt="Demo" width="100%">
 
-此Demo为参考答案的演示效果. **在你完成作业之前, 你将不会看到如此稳定的蓝色轨迹, 若未实现ESKF, 蓝色轨迹会快速发散**. 你的任务是自行实现精度尽可能高的解算方法. 期待你的精彩发挥!
 
-请搜索TODO, 开始你的编码 :P. 此处将完成作业相关的配置汇总如下:
+## 良好要求: 补全代码，功能正常，且经过调试参数，滤波后性能比滤波前好 (请将详细的误差对比结果提供在作业中，供助教有足够依据评阅)
 
-* **Hyper Params** [here](src/lidar_localization/config/filtering/kitti_filtering.yaml#L109)
-    
-    * 地图以及Scan Context Data输入路径
-    
-    * ESKF / IEKF参数配置
-
-* **ESKF Interface** [here](src/lidar_localization/include/lidar_localization/models/kalman_filter/error_state_kalman_filter.hpp)
-
-    * ESKF接口定义
-
-* **ESKF Implementation** [here](src/lidar_localization/src/models/kalman_filter/error_state_kalman_filter.cpp)
-
-    * ESKF实现
-
-### 良好要求: 补全代码，功能正常，且经过调试参数，滤波后性能比滤波前好 (请将详细的误差对比结果提供在作业中，供助教有足够依据评阅)
-
-相比及格要求, 变化不大, 编码完成后, 保存结果, 进行**evo**评估即可.
 
 为了获取可用于**evo评估**的轨迹输出, 可通过如下`ROS Service Call`, 比较融合前后的Odometry: 
 
